@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生肖姓名學分析</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <h1>生肖姓名學分析</h1>
+            <p>融合正統生肖姓名學規則與 AI，為您深度解析</p>
+        </header>
+
+        <main>
+            <form id="analyze-form">
+                <div class="input-group">
+                    <label for="name">請輸入姓名：</label>
+                    <input type="text" id="name" placeholder="例如：張大明" required autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <label>請選擇性別：</label>
+                    <div style="display: flex; gap: 1.5rem; align-items: center; margin-top: 0.8rem;">
+                        <label style="display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer; color: white;">
+                            <input type="radio" name="gender" value="男" required checked style="width: 1.2rem; height: 1.2rem;"> 男
+                        </label>
+                        <label style="display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer; color: white;">
+                            <input type="radio" name="gender" value="女" required style="width: 1.2rem; height: 1.2rem;"> 女
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="zodiac">請選擇生肖：</label>
+                    <select id="zodiac" required>
+                        <option value="" disabled selected>請選擇...</option>
+                        <option value="鼠">子 - 鼠</option>
+                        <option value="牛">丑 - 牛</option>
+                        <option value="虎">寅 - 虎</option>
+                        <option value="兔">卯 - 兔</option>
+                        <option value="龍">辰 - 龍</option>
+                        <option value="蛇">巳 - 蛇</option>
+                        <option value="馬">午 - 馬</option>
+                        <option value="羊">未 - 羊</option>
+                        <option value="猴">申 - 猴</option>
+                        <option value="雞">酉 - 雞</option>
+                        <option value="狗">戌 - 狗</option>
+                        <option value="豬">亥 - 豬</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="submit-btn" class="glow-button">
+                    <span class="btn-text">開始專業分析</span>
+                    <span class="btn-loader" style="display:none;">
+                        <span class="spinner"></span> 解析中...
+                    </span>
+                </button>
+            </form>
+
+            <div id="result-container" class="hidden glass-panel">
+                <div class="result-header">
+                    <div class="icon-pulse">✨</div>
+                    <h2>專屬您的姓名解析報告</h2>
+                </div>
+                <div id="result-content" class="markdown-content"></div>
+            </div>
+            
+            <div id="error-message" class="hidden error-panel">
+                 <p></p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; AI 姓名學實驗室</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

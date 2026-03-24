@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nameology-analyzer
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: GEMINI_API_KEY
+        sync: false # 必須在 Render 後台手動填入
