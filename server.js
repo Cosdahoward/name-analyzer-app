@@ -23,6 +23,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
+// 提供給外部喚醒服務的輕量級路由，防止 Render 免費版休眠
+app.get('/ping', (req, res) => {
+    res.status(200).send('pong');
+});
+
 // Load the Gemini API client
 let ai;
 try {
